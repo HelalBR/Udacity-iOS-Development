@@ -25,14 +25,16 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func setUIStateForRecording(isRecording: Bool) {
+        stopRecButton?.isEnabled = isRecording
+        recordingButton.isEnabled = !isRecording
     }
+    
 
     @IBAction func recordAudio(_ sender: Any) {
         recordingLabel.text = "Recording in progress..."
-        stopRecButton?.isEnabled = true
-        recordingButton.isEnabled = false
+        setUIStateForRecording(isRecording: true)
+        
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -52,8 +54,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func stopRecordAudio(_ sender: Any) {
         recordingLabel.text = "Tap to record"
-        stopRecButton?.isEnabled = false
-        recordingButton.isEnabled = true
+        setUIStateForRecording(isRecording: false)
         
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
@@ -62,10 +63,17 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        
+        let alert = UIAlertController(title: "Oooops!", message: "Something went wrong...", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
+            UIAlertAction in NSLog("OK pressed")
+        }
+        alert.addAction(okAction)
+    
         if flag {
             performSegue(withIdentifier: "secondScreen", sender: audioRecorder.url)
         } else {
-            print("Something went wrong.")
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
