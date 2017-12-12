@@ -35,7 +35,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordingLabel.text = "Recording in progress..."
         setUIStateForRecording(isRecording: true)
         
-        
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]

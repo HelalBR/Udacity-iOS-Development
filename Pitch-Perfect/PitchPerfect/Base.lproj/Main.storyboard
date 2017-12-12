@@ -78,60 +78,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yoO-uN-XWU">
-                                <rect key="frame" x="0.0" y="64" width="375" height="503"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yoO-uN-XWU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="499"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hrB-V2-HoL">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hrB-V2-HoL">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="166.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aL1-IY-dMi" userLabel="Slow Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="167.5"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aL1-IY-dMi" userLabel="Slow Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="166.5"/>
                                                 <state key="normal" image="Slow"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="TNR-7a-ATV" eventType="touchUpInside" id="5Ur-Kp-dc6"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqa-DI-UxR" userLabel="Fast Button">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="167.5"/>
+                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqa-DI-UxR" userLabel="Fast Button">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="166.5"/>
                                                 <state key="normal" image="Fast"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="TNR-7a-ATV" eventType="touchUpInside" id="MMX-XL-71o"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vzP-P6-3DG">
-                                        <rect key="frame" x="0.0" y="167.5" width="375" height="168"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vzP-P6-3DG">
+                                        <rect key="frame" x="0.0" y="166.5" width="375" height="166"/>
                                         <subviews>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D05-lu-kor" userLabel="Chipmunk Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="168"/>
+                                            <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D05-lu-kor" userLabel="Chipmunk Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="166"/>
                                                 <state key="normal" image="HighPitch"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="TNR-7a-ATV" eventType="touchUpInside" id="o3s-DN-vRU"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezT-tY-FBE" userLabel="Vader Button">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="168"/>
+                                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezT-tY-FBE" userLabel="Vader Button">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="166"/>
                                                 <state key="normal" image="LowPitch"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="TNR-7a-ATV" eventType="touchUpInside" id="CrV-fF-3iC"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xwS-Sp-mic">
-                                        <rect key="frame" x="0.0" y="335.5" width="375" height="167.5"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xwS-Sp-mic">
+                                        <rect key="frame" x="0.0" y="332.5" width="375" height="166.5"/>
                                         <subviews>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIE-Tl-OY8" userLabel="Echo Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="167.5"/>
+                                            <button opaque="NO" tag="4" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIE-Tl-OY8" userLabel="Echo Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="166.5"/>
                                                 <state key="normal" image="Echo"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="TNR-7a-ATV" eventType="touchUpInside" id="7xF-4C-BJh"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLT-HZ-vAZ" userLabel="Reverb Button">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="167.5"/>
+                                            <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLT-HZ-vAZ" userLabel="Reverb Button">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="166.5"/>
                                                 <state key="normal" image="Reverb"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="TNR-7a-ATV" eventType="touchUpInside" id="I3b-mY-2Hr"/>
                                                 </connections>
@@ -140,31 +170,31 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="keB-Qk-54n">
-                                <rect key="frame" x="155" y="567" width="64" height="64"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSc-y2-LsV" userLabel="Stop Button">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="0w1-i3-HKF"/>
-                                            <constraint firstAttribute="height" constant="64" id="Wal-Jh-CxF"/>
-                                        </constraints>
-                                        <state key="normal" image="Stop"/>
-                                        <connections>
-                                            <action selector="stopButtonPressed:" destination="TNR-7a-ATV" eventType="touchUpInside" id="fLb-Bx-ciA"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSc-y2-LsV" userLabel="Stop Button">
+                                <rect key="frame" x="155" y="583" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="Of6-Xq-38m"/>
+                                    <constraint firstAttribute="height" constant="64" id="h1h-1U-of9"/>
+                                </constraints>
+                                <state key="normal" image="Stop"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="stopButtonPressed:" destination="TNR-7a-ATV" eventType="touchUpInside" id="fLb-Bx-ciA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="keB-Qk-54n" firstAttribute="centerX" secondItem="yoO-uN-XWU" secondAttribute="centerX" id="1to-A6-gY4"/>
-                            <constraint firstItem="yoO-uN-XWU" firstAttribute="leading" secondItem="Ocy-r4-QrR" secondAttribute="leading" id="AGP-sZ-wZf"/>
-                            <constraint firstItem="Ocy-r4-QrR" firstAttribute="trailing" secondItem="yoO-uN-XWU" secondAttribute="trailing" id="Eu5-Gq-sV4"/>
-                            <constraint firstItem="Ocy-r4-QrR" firstAttribute="bottom" secondItem="yoO-uN-XWU" secondAttribute="bottom" constant="100" id="bI4-rI-0p7"/>
-                            <constraint firstItem="keB-Qk-54n" firstAttribute="top" secondItem="yoO-uN-XWU" secondAttribute="bottom" id="cJq-O6-cXd"/>
-                            <constraint firstItem="yoO-uN-XWU" firstAttribute="top" secondItem="Ocy-r4-QrR" secondAttribute="top" id="gZp-kA-1mq"/>
+                            <constraint firstItem="yoO-uN-XWU" firstAttribute="top" secondItem="Ocy-r4-QrR" secondAttribute="top" id="7fs-86-FRm"/>
+                            <constraint firstItem="Ocy-r4-QrR" firstAttribute="bottom" secondItem="pSc-y2-LsV" secondAttribute="bottom" constant="20" id="MZq-kS-y4s"/>
+                            <constraint firstItem="yoO-uN-XWU" firstAttribute="leading" secondItem="Ocy-r4-QrR" secondAttribute="leading" id="P0S-Lv-SXX"/>
+                            <constraint firstItem="pSc-y2-LsV" firstAttribute="centerX" secondItem="KAb-uI-8Lj" secondAttribute="centerX" id="UGd-f7-Mfd"/>
+                            <constraint firstItem="Ocy-r4-QrR" firstAttribute="trailing" secondItem="yoO-uN-XWU" secondAttribute="trailing" id="b7O-Au-ase"/>
+                            <constraint firstItem="pSc-y2-LsV" firstAttribute="top" secondItem="yoO-uN-XWU" secondAttribute="bottom" constant="20" id="kpD-67-cF7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ocy-r4-QrR"/>
                     </view>
