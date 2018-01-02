@@ -107,7 +107,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.text=""
+        if textField.text == "TOP" || textField.text == "BOTTOM" {
+            textField.text = ""
+        }
         textField.becomeFirstResponder()
     }
     
@@ -146,13 +148,25 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageViewPicker.image!, memedImage: generateMemedImage())
     }
     
+    func setNavbarVisibility(visibility: Bool) -> Void {
+        navbar.setNavigationBarHidden(visibility, animated: true)
+        navbar.setToolbarHidden(visibility, animated: true)
+        topToolBar.isHidden = visibility
+        bottomToolBar.isHidden = visibility
+    }
+    
+    func setBackgroundColor(color: String) -> Void {
+        if color == "white"{
+            self.view.backgroundColor = UIColor.white
+        }
+        else{
+            self.view.backgroundColor = UIColor.black
+        }
+    }
+    
     func generateMemedImage() -> UIImage {
-        
-        navbar.setNavigationBarHidden(true, animated: true)
-        navbar.setToolbarHidden(true, animated: true)
-        topToolBar.isHidden = true
-        bottomToolBar.isHidden = true
-        self.view.backgroundColor = UIColor.black
+        setNavbarVisibility(visibility: true)
+        setBackgroundColor(color: "black")
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -160,18 +174,15 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        navbar.setToolbarHidden(false, animated: true)
-        navbar.setNavigationBarHidden(false, animated: true)
-        topToolBar.isHidden = false
-        bottomToolBar.isHidden = false
-        self.view.backgroundColor = UIColor.white
+        setNavbarVisibility(visibility: false)
+        setBackgroundColor(color: "white")
         
         return memedImage
     }
     
     @IBAction func cancelEditing(_ sender: Any) {
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+        setTextFields(textField: topTextField, defaultText: "TOP")
+        setTextFields(textField: bottomTextField, defaultText: "BOTTOM")
         imageViewPicker.image = nil
         self.view.endEditing(true)
         shareButton.isEnabled = false
