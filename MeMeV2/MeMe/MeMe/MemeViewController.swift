@@ -10,7 +10,7 @@ import UIKit
 
 class MemeViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate {
-
+    
     @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var bottomToolBar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
@@ -82,7 +82,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         present(imagePicker, animated: true, completion: nil)
         shareButton.isEnabled = true
     }
-
+    
     @IBAction func pickAnImage(_ sender: Any) {
         selectImage(source: "photoLibrary")
     }
@@ -191,14 +191,14 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         
         activityViewController.popoverPresentationController?.sourceView = self.view
         activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
-        if(success && error == nil){
-            self.save(imageMeme: image)
-            self.dismiss(animated:true, completion: nil);
-        }
-        else if (error != nil){
-            let alert = UIAlertController(title: "Oooops!", message: "Something went wrong...", preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-        }
+            if(success && error == nil){
+                self.save(imageMeme: image)
+                self.dismiss(animated:true, completion: nil);
+            }
+            else if (error != nil){
+                let alert = UIAlertController(title: "Oooops!", message: "Something went wrong...", preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+            }
         };
         
         present(activityViewController, animated: true, completion: nil)
