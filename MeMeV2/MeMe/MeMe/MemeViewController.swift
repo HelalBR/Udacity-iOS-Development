@@ -184,9 +184,6 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBAction func shareImage(_ sender: Any) {
         let image = generateMemedImage()
-        // let memedImageToShare = [memedImage]
-        
-        //let activityViewController = UIActivityViewController(activityItems: memedImageToShare, applicationActivities: nil)
         let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         
         activityViewController.popoverPresentationController?.sourceView = self.view
