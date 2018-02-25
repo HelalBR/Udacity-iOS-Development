@@ -99,7 +99,7 @@ class AddNewPinViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Move the view when KB appears
     func keyboardWillShow(notification: NSNotification) {
         if setNewLocationTextField.isFirstResponder {
-            view.frame.origin.y = getKeyboardHeight(notification: notification) * (-1)
+            view.frame.origin.y = getKeyboardHeight(notification: notification) * (-0.5)
         }
     }
     
@@ -120,7 +120,6 @@ class AddNewPinViewController: UIViewController, UITextFieldDelegate {
     }
     
     func unsubscribeFromKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
 }
